@@ -1,88 +1,192 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f9;
-  padding: 40px 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
 
-.todo-container {
-  max-width: 450px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-  color: #2d3436;
-  margin-bottom: 20px;
-}
-
-.input-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-input[type="text"] {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-button.add-btn {
-  padding: 10px 18px;
-  background-color: #00b894;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button.add-btn:hover {
-  background-color: #00a182;
-}
-
-ul {
-  list-style: none;
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-li {
+/* Light Theme (Default) */
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+  padding: 0 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+p,
+label {
+  color: #64748b;
+}
+
+.navbar,
+section {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.btn-theme,
+.skill-card,
+.project-card,
+.contact-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+input {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+}
+
+/* Dark Theme Overrides */
+body.dark-theme {
+  background-color: #0d1117 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark-theme p,
+body.dark-theme label {
+  color: #8b949e !important;
+}
+
+body.dark-theme .navbar,
+body.dark-theme section {
+  border-bottom-color: #30363d !important;
+}
+
+body.dark-theme .btn-theme,
+body.dark-theme .skill-card,
+body.dark-theme .project-card,
+body.dark-theme .contact-container {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+body.dark-theme input {
+  background-color: #0d1117 !important;
+  border-color: #30363d !important;
+  color: #f0f6fc !important;
+}
+
+/* Layout Styles */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background: #f8f9fa;
+  padding: 24px 0;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-theme {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(79, 172, 254, 0.1);
+  color: #0d6efd;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00f2fe, #4facfe, #7928ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.skills-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.skill-card,
+.project-card {
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 36px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
   margin-bottom: 8px;
-  border-radius: 4px;
-  border-left: 4px solid #0984e3;
 }
 
-li.completed span {
-  text-decoration: line-through;
-  color: #b2bec3;
+.form-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  outline: none;
 }
 
-.task-text {
-  cursor: pointer;
-  flex: 1;
-}
-
-.delete-btn {
-  background-color: #d63031;
-  color: white;
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: white;
+  font-weight: 700;
   cursor: pointer;
-  font-size: 12px;
-}
-
-.delete-btn:hover {
-  background-color: #c0392b;
 }
