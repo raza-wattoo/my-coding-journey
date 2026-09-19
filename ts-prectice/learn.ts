@@ -18,3 +18,5 @@ function addTask(taskText: string): void {
 
 addTask("Testing TSConfig Configuration");
 console.log("Git learning Day 36 in progress!");
+// Dark mode feature toggle
+console.log("Dark mode feature initialized");
